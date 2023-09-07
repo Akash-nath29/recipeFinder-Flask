@@ -1,22 +1,8 @@
-import os
-from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request
 import requests
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] =\
-        'sqlite:///' + os.path.join(basedir, 'database.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 app.config['SECRET_KEY'] = 'MLXH243rjBDIBibiBIbibIUBImmfrdTWS7FDhdwYF56wPj8'
-
-db = SQLAlchemy(app)
-
-#TODO: make the database
-
-
 api_key = '21ce19a86415375dd63c0563138cd22a'
 
 # Base URL for Edamam Recipe Search API
