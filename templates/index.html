@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Recipe Finder</h1>
+<form method="POST">
+    <label for="query">Enter ingredients or keywords:</label>
+    <span>
+        <input type="text" name="query" id="query" placeholder="Keywords" autocomplete="off" required>
+        <button type="submit">Search</button>
+    </span>
+</form>
+{% if recipes %}
+<h2>Search Results for "{{ query }}"</h2>
+<ul>
+    {% for recipe in recipes %}
+    <li>
+        <a href="{{ recipe.recipe.url }}" target="_blank">{{ recipe.recipe.label }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
